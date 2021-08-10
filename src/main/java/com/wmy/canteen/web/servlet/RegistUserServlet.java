@@ -50,6 +50,7 @@ public class RegistUserServlet extends HttpServlet {
             //4.得到结果
             if(flag){
                 resultInfo.setFlag(flag);
+                resultInfo.setErrorMsg("注册成功，请注意查收邮箱进行激活");
             }else{
                 resultInfo.setFlag(flag);
                 resultInfo.setErrorMsg("注册失败，账户已存在");

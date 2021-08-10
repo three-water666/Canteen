@@ -7,6 +7,8 @@ public class User implements Serializable {
 //    private String username;
     private String password;
     private String email;
+    private String status;
+    private String code;
 
     public User() {
     }
@@ -15,6 +17,14 @@ public class User implements Serializable {
         this.sno = sno;
         this.password = password;
         this.email = email;
+    }
+
+    public User(String sno, String password, String email, String status, String code) {
+        this.sno = sno;
+        this.password = password;
+        this.email = email;
+        this.status = status;
+        this.code = code;
     }
 
     public String getSno() {
@@ -39,5 +49,21 @@ public class User implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 }

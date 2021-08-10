@@ -23,7 +23,26 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public void save(User user) {
-        String sql="insert into student(sno,password,email) values(?,?,?)";
-        template.update(sql,user.getSno(),user.getPassword(),user.getEmail());
+        String sql="insert into student(sno,password,email,status,code) values(?,?,?,?,?)";
+        template.update(sql,user.getSno(),user.getPassword(),user.getEmail(),user.getStatus(),user.getCode());
+    }
+
+    @Override
+    public User findByCode(String code) {
+        User user=null;
+        try {
+            String sql="select * from student where code=?";
+            user=template.queryForObject(sql,new BeanPropertyRowMapper<User>(User.class),code);
+        } catch (DataAccessException e) {
+
+        }
+        return user;
+    }
+
+    @Override
+    public boolean updateStatus(User user) {
+        String sql="update student set status='Y' where code=?";
+        template.update(sql,user.getCode());
+        return true;
     }
 }

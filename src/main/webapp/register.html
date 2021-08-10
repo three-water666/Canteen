@@ -81,6 +81,7 @@
 
                         if(data.flag){
                             //注册成功，跳转成功页面
+                            $("#errorMsg").html(data.errorMsg);
                             // location.href="register_ok.html";
                         }else{
                             //注册失败,给errorMsg添加提示信息
