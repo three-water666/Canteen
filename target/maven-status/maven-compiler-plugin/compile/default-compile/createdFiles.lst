@@ -1,9 +1,13 @@
-com\wmy\canteen\dao\impl\UserDaoImpl.class
 com\wmy\canteen\dao\UserDao.class
-com\wmy\canteen\service\impl\UserServiceImpl.class
 com\wmy\canteen\web\servlet\CheckCodeServlet.class
+com\wmy\canteen\web\servlet\ActiveUserServlet.class
+com\wmy\canteen\domain\User.class
+com\wmy\canteen\util\MailUtils$1.class
+com\wmy\canteen\dao\impl\UserDaoImpl.class
+com\wmy\canteen\util\UuidUtil.class
+com\wmy\canteen\service\impl\UserServiceImpl.class
 com\wmy\canteen\domain\ResultInfo.class
 com\wmy\canteen\web\servlet\RegistUserServlet.class
 com\wmy\canteen\util\JDBCUtils.class
 com\wmy\canteen\service\UserService.class
-com\wmy\canteen\domain\User.class
+com\wmy\canteen\util\MailUtils.class
