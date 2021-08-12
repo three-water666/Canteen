@@ -7,4 +7,5 @@ public interface UserDao {
     void save(User user);
     User findByCode(String code);
     boolean updateStatus(User user);
+    User findBySnoAndPassword(String sno,String password);
 }

@@ -45,4 +45,16 @@ public class UserDaoImpl implements UserDao {
         template.update(sql,user.getCode());
         return true;
     }
+
+    @Override
+    public User findBySnoAndPassword(String sno, String password) {
+        User user=null;
+        try {
+            String sql="select * from student where sno=? and password=?";
+            template.queryForObject(sql,new BeanPropertyRowMapper<User>(User.class),sno,password);
+        } catch (DataAccessException e) {
+
+        }
+        return user;
+    }
 }

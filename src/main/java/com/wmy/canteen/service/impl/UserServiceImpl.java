@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService {
         userDao.save(user);
 
         //发送邮件激活
-        String content="<a href='http://localhost/yuncanteen/activeUserServlet?code="+user.getCode()+"'>点击激活【工大食堂账号】</a>";
+        String content="<a href='http://localhost/yuncanteen/user/active?code="+user.getCode()+"'>点击激活【工大食堂账号】</a>";
         MailUtils.sendMail(user.getEmail(),content,"激活邮件");
         return true;
     }
@@ -41,5 +41,10 @@ public class UserServiceImpl implements UserService {
         //2.激活账户
         userDao.updateStatus(user);
         return true;
+    }
+
+    @Override
+    public User login(User user) {
+        return userDao.findBySnoAndPassword(user.getSno(),user.getPassword());
     }
 }
