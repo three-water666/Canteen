@@ -138,7 +138,7 @@ public class UserServlet extends BaseServlet {
             //成功登录
             info.setFlag(true);
             //设置session，个性化提示
-            request.getSession().setAttribute("user",u);
+            request.getSession().setAttribute("user",user.getSno());
         }
         //5.返回数据
         ObjectMapper mapper = new ObjectMapper();
@@ -158,5 +158,10 @@ public class UserServlet extends BaseServlet {
         request.getSession().invalidate();
         //2.跳转到登录页面
         response.sendRedirect(request.getContextPath()+"/index.html");
+    }
+
+    public void findOne(HttpServletRequest request,HttpServletResponse response) throws IOException {
+        Object user = request.getSession().getAttribute("user");
+        writeValue(user,response);
     }
 }

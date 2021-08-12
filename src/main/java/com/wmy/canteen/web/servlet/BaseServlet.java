@@ -1,5 +1,7 @@
 package com.wmy.canteen.web.servlet;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -34,5 +36,9 @@ public class BaseServlet extends HttpServlet {
         }
     }
 
-
+    public void writeValue(Object obj,HttpServletResponse response) throws IOException {
+        ObjectMapper mapper=new ObjectMapper();
+        response.setContentType("application/json;charset=utf-8");
+        mapper.writeValue(response.getOutputStream(),obj);
+    }
 }

@@ -6,9 +6,10 @@
         //查询用户信息
         $.get("user/findOne",{},function (data) {
             //{uid:1,name:'李四'}
-            var msg = "欢迎回来，"+data.name;
-            $("#span_username").html(msg);
-
+            if(data!=null){
+                var msg = "欢迎回来，"+data;
+                $("#span_username").html(msg);
+            }
         });
     });
 
@@ -26,10 +27,9 @@
         </div>
         <!-- 登录状态  -->
         <div class="login">
-
             <span id="span_username"></span>
             <a href="myfavorite.html" class="collection">我的收藏</a>
-            <a href="javascript:location.href='exitServlet';">退出</a>
+            <a href="javascript:location.href='user/exit';">退出</a>
         </div>
     </div>
 </header>

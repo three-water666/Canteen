@@ -29,7 +29,7 @@
 					//data : {flag:false,errorMsg:''}
 					if(data.flag){
 					    //登录成功
-						location.href="index.html";
+						location.href="login_ok.html";
 					}else{
 					    //登录失败
 						$("#errorMsg").html(data.errorMsg);
@@ -66,7 +66,7 @@
 <!--				登录-->
 				<form id="loginForm" action="" method="post" accept-charset="utf-8">
         			<input type="hidden" name="action" value="login"/>
-					<input name="username" type="text" placeholder="请输入账号" autocomplete="off">
+					<input name="sno" type="text" placeholder="请输入学号" autocomplete="off">
         			<input name="password" type="text" placeholder="请输入密码" autocomplete="off">
         			<div class="verify">
 						<input name="check" type="text" placeholder="请输入验证码" autocomplete="off">
